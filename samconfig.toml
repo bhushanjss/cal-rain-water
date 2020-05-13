@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "GaiaStack"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1n8uj65p6te4n"
+s3_prefix = "GaiaStack"
+region = "ap-south-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"

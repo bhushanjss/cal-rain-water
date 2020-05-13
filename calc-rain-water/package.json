@@ -1,0 +1,19 @@
+{
+  "name": "calc-rain-water",
+  "version": "1.0.0",
+  "description": "calculate the rain water capacity",
+  "main": "app.js",
+  "repository": "",
+  "author": "Vidya",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}

@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'calcRainWater
+
+  Sample SAM Template for calcRainWater
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  CalcRainWaterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: CalcRainWaterFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        CalcRainWater:
+          Type: Api
+          Properties:
+            Path: /calc
+            Method: get
+Outputs:
+  CalcRainWaterApi:
+    Description: API Gateway endpoint URL for Prod stage for CalcRainWater function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/calc/
+  CalcRainWaterFunction:
+    Description: CalcRainWater Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - CalcRainWaterFunction
+      - Arn
+  CalcRainWaterFunctionIamRole:
+    Description: Implicit IAM Role created for CalcRainWater function
+    Value:
+      Fn::GetAtt:
+      - CalcRainWaterFunctionRole
+      - Arn
